@@ -32,4 +32,8 @@ class MasterOutputRepository:
             _key_value_lst = list(file_data.values())[0]
             for idx, tup in enumerate(_key_value_lst, start=2):
                 ws.cell(column=counter, row=idx, value=tup[1])
+                # Matt is this where there could be a check to see if 'value' matches the 'type'
+                # expected and as specified in the datamap? I think it makes sense for the check
+                # to be informative and simply highlight where there are inconsistencies rather
+                # than cause the programme to stop.
         wb.save(output_path / self.output_filename)
